@@ -10,14 +10,20 @@ let xSpeed2 = 7;
 let ySpeed2 = 3;
 let d2 = 40;  
 
+
 let value = 0;
+let a = 0;
+let b = 0;
+let c = 0;
+
+
 
 function setup() {
   createCanvas(550, 700);
 }
 
 function draw() {
-  background(0); // try commenting this out!
+  background(a, b, c); // try commenting this out!
 
 
 
@@ -61,8 +67,7 @@ ellipse(x2, y2, random([0], [100]));
 stroke("palegreen");
 strokeWeight(random([10], [20]));
 
-//rect(x2, y2, 70, 70, [20], [2], [20], [20]) 
-//making tr any number has a stupid pinched coner I hate it
+
 
 
 fill(value);
@@ -80,6 +85,35 @@ function mouseMoved(fxn) {
 if (value > 255){
   value = 0;
 }
+//IT WORKED LETS GOOOOOOOOOOOOOOOOO found 
+//it on the references of p5
 
-//IT WORKED LETS GOOOOOOOOOOOOOOOOO found it on the references of p5
 }
+
+function mouseClicked(fxn){
+  xSpeed1 = xSpeed1 * 3;
+
+  xSpeed2 = xSpeed2 * 5;
+}
+
+//the above makes the circles obliterate 
+//after a few clicks at different rates LOL
+
+function keyPressed(){
+  c += 15.2;
+  if (c > 255){
+    c = 0;
+  }
+
+  b += 8.3;
+  if (b > 255){
+    b = 0;
+  }
+
+  a += 2;
+  if (a > 255){
+    a =0;
+  }
+}
+
+
