@@ -10,12 +10,17 @@ let xSpeed2 = 7;
 let ySpeed2 = 3;
 let d2 = 40;  
 
+let value = 0;
+
 function setup() {
   createCanvas(550, 700);
 }
 
 function draw() {
   background(0); // try commenting this out!
+
+
+
  
   // if x hits the right side or the left side of the canvas,
   // switch directions...
@@ -35,7 +40,8 @@ function draw() {
   ellipse(x1, y1, random([0], [100]));
   
 stroke("red");
-strokeWeight(random([10], [20]));
+strokeWeight(random([10], [20])); 
+//without this added, both circles are green outlines
 
 
   if (x2 > width || x2 < 0) {
@@ -59,4 +65,21 @@ strokeWeight(random([10], [20]));
 //making tr any number has a stupid pinched coner I hate it
 
 
+fill(value);
+
+
+//trying to make the mouse move so the circle gradients
+//lighten up and then cyle through again
+
+
+}
+
+function mouseMoved(fxn) {
+  value += 5;
+
+if (value > 255){
+  value = 0;
+}
+
+//IT WORKED LETS GOOOOOOOOOOOOOOOOO found it on the references of p5
 }
